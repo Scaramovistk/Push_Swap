@@ -6,13 +6,16 @@
 #    By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 14:37:26 by gscarama          #+#    #+#              #
-#    Updated: 2022/03/21 16:32:12 by gscarama         ###   ########.fr        #
+#    Updated: 2022/03/25 12:49:11 by gscarama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 
-SOURCE	= main.c
+SOURCE	= main.c \
+			checks.c \
+			push_swap.c \
+			utils.c \
 
 CFLAGS	= -Wall -Wextra -Werror
 GCC	= gcc

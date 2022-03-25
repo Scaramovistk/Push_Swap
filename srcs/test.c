@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:45:02 by gscarama          #+#    #+#             */
-/*   Updated: 2022/03/25 13:17:34 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/03/24 12:39:58 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/push_swap.h"
+//#include "../incl/push_swap.h"
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
-	t_list	*lst;
-
-	if (argc == 2)
-		check_one_arg(argv);
-	else if (argc > 2)
-		check_mult_args(argc, argv);
-	else
-		ft_printf("\nError\n");
-	lst = create_list(argc, argv);
-
-	algoritims(lst);
-	
-	ft_printflst(lst);
+	printf("Argc = %d\n", argc);
 	return (0);
 }
