@@ -6,7 +6,7 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:45:02 by gscarama          #+#    #+#             */
-/*   Updated: 2022/03/25 13:17:34 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:56:18 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(int argc, char **argv)
 	else
 		ft_printf("\nError\n");
 	lst = create_list(argc, argv);
+	
+	check_duplicate(lst);
 
 	algoritims(lst);
 	

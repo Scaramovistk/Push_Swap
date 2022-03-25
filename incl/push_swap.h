@@ -6,7 +6,7 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:57:20 by gscarama          #+#    #+#             */
-/*   Updated: 2022/03/25 13:17:02 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:36:10 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@
 void	ft_printflst(t_list *lst);
 
 t_list	*create_list(int argc, char **argv);
-void	ft_swap(t_list *lst);
+void	ft_swap(t_list *head, t_list *tail);
 void	algoritims(t_list *lst);
 
 void	check_one_arg (char **argv);
 void	check_mult_args (int argc, char **argv);
+void	check_duplicate(t_list *lst);
 
 #endif

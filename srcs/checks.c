@@ -6,7 +6,7 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 12:33:10 by gscarama          #+#    #+#             */
-/*   Updated: 2022/03/25 13:20:00 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:28:15 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	check_one_arg (char **argv)
 		}
 		row++;
 	}
-	ft_putstr_fd("Input Correct\n", 1);
 }
 
 void	check_mult_args (int argc, char **argv)
@@ -46,25 +45,37 @@ void	check_mult_args (int argc, char **argv)
 			if (!ft_isdigit(argv[row][read]))
 			{
 				ft_printf("%s\nError\n", argv[row]);
-				exit(0);
+				exit(-1);
 			}
 			read++;
 		}
 		row++;
 	}
-	ft_putstr_fd("Input Correct\n", 1);
 }
 
 void	check_duplicate(t_list *lst)
 {
-	int	size;
-	int	*nb;
+	t_list	*head;
+	t_list	*lrow;
+	int		dup;
 
-	size = 0;
+	head = lst;
 	while (lst)
 	{
-		size++;
+		dup = 0;
+		lrow = head;
+		while (lrow)
+		{
+			if (lst->content == lrow->content)
+				dup++;
+			if (dup == 2)
+			{
+				ft_printf("Duplicate Input: %d\n", lrow->content);
+				exit(-1);
+			}
+			lrow = lrow->next;
+		}
 		lst = lst->next;
 	}
-	nb = malloc(sizeof(int *) * size);
+	ft_putstr_fd("Input Correct\n", 1);
 }
