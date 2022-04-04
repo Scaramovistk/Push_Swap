@@ -6,7 +6,7 @@
 #    By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 14:37:26 by gscarama          #+#    #+#              #
-#    Updated: 2022/03/25 12:49:11 by gscarama         ###   ########.fr        #
+#    Updated: 2022/04/04 15:30:43 by gscarama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SOURCE	= main.c \
 			checks.c \
 			push_swap.c \
 			utils.c \
+			operation.c \
+			operations.c \
 
 CFLAGS	= -Wall -Wextra -Werror
 GCC	= gcc

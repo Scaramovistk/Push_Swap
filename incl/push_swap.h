@@ -6,7 +6,7 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:57:20 by gscarama          #+#    #+#             */
-/*   Updated: 2022/03/25 16:36:10 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/04/04 15:26:35 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,24 @@
 
 void	ft_printflst(t_list *lst);
 
-t_list	*create_list(int argc, char **argv);
-void	ft_swap(t_list *head, t_list *tail);
+t_list	*create_list(char **argv);
+void	ft_swap(int *head, int *tail);
+void	ft_push(t_list **lsta, t_list **lstb);
 void	algoritims(t_list *lst);
 
-void	check_one_arg (char **argv);
-void	check_mult_args (int argc, char **argv);
-void	check_duplicate(t_list *lst);
+void	check_args(char **argv);
+void	check_dup(t_list *lst);
+
+void	ft_sa(int *head, int *tail);
+void	ft_sb(int *head, int *tail);
+void	ft_ss(t_list *lsta, t_list *lstb);
+void	ft_pa(t_list *lsta, t_list *lstb);
+void	ft_pb(t_list *lsta, t_list *lstb);
+void	ft_ra(t_list **lsta);
+void	ft_rb(t_list **lstb);
+void	ft_rr(t_list **lsta, t_list **lstb);
+void	ft_rra(t_list **lsta);
+void	ft_rrb(t_list **lstb);
+void	ft_rrr (t_list **lsta, t_list **lstb);
 
 #endif

@@ -6,36 +6,19 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 12:33:10 by gscarama          #+#    #+#             */
-/*   Updated: 2022/03/25 16:28:15 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/04/04 15:27:00 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
 
-void	check_one_arg (char **argv)
-{
-	int	row;
-
-	row = 0;
-	while (argv[1][row])
-	{
-		if (!ft_isdigit(argv[1][row]) && argv[1][row] != ' '
-			&& argv[1][row] != '-')
-		{
-			ft_printf("%s\nError\n", argv[1]);
-			exit(0);
-		}
-		row++;
-	}
-}
-
-void	check_mult_args (int argc, char **argv)
+void	check_args(char **argv)
 {
 	int	row;
 	int	read;
 
 	row = 1;
-	while (row < argc)
+	while (argv[row])
 	{
 		read = 0;
 		if(argv[row][0] == '-')
@@ -53,7 +36,7 @@ void	check_mult_args (int argc, char **argv)
 	}
 }
 
-void	check_duplicate(t_list *lst)
+void	check_dup(t_list *lst)
 {
 	t_list	*head;
 	t_list	*lrow;
