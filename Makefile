@@ -6,7 +6,7 @@
 #    By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 14:37:26 by gscarama          #+#    #+#              #
-#    Updated: 2022/04/04 15:30:43 by gscarama         ###   ########.fr        #
+#    Updated: 2022/04/07 18:00:16 by gscarama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,9 @@ SOURCE	= main.c \
 			utils.c \
 			operation.c \
 			operations.c \
+			quicksort.c \
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -g -Wall -Wextra -Werror
 GCC	= gcc
 RM	= rm -rf
 PATH_SRC	= srcs

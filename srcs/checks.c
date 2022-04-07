@@ -6,7 +6,7 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 12:33:10 by gscarama          #+#    #+#             */
-/*   Updated: 2022/04/04 15:27:00 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:00:51 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ void	check_args(char **argv)
 		while (argv[row][read])
 		{
 			if (!ft_isdigit(argv[row][read]))
-			{
-				ft_printf("%s\nError\n", argv[row]);
-				exit(-1);
-			}
+				ft_error();
 			read++;
 		}
 		row++;
@@ -52,13 +49,9 @@ void	check_dup(t_list *lst)
 			if (lst->content == lrow->content)
 				dup++;
 			if (dup == 2)
-			{
-				ft_printf("Duplicate Input: %d\n", lrow->content);
-				exit(-1);
-			}
+				ft_error();
 			lrow = lrow->next;
 		}
 		lst = lst->next;
 	}
-	ft_putstr_fd("Input Correct\n", 1);
 }

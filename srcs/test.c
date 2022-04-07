@@ -6,7 +6,7 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:45:02 by gscarama          #+#    #+#             */
-/*   Updated: 2022/04/04 15:27:55 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:14:29 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 int	main(int argc, char **argv)
 {
 	t_list	*lsta;
-	t_list	*lstb;
+	//t_list	*lstb;
 
-	lstb = ft_lstnew(8);
-	lsta = create_list(argv);
+	//lstb = ft_lstnew(8);
+	lsta = create_list(argc, argv);
 
-	ft_ra(&lsta);
-	
+	quicksort(lsta, ft_lstsize(lsta));
+
 	printf("LISTA\n");
 	ft_printflst(lsta);
 	// printf("LISTB\n");
