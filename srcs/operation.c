@@ -6,39 +6,63 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 15:05:46 by gscarama          #+#    #+#             */
-/*   Updated: 2022/04/04 15:08:26 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/04/22 15:21:48 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
 
-void	ft_sa(int *head, int *tail)
+void	ft_sa(t_data *lst)
 {
-	write(1, "sa\n", 3);
-	ft_swap(head, tail);
+	if (lst->a->size > 1)
+	{
+		ft_swap(&lst->a->stk);
+		//if (lst->boll == TRUE)
+			write(1, "sa\n", 3);
+	}
 }
 
-void	ft_sb(int *head, int *tail)
+void	ft_sb(t_data *lst)
 {
-	write(1, "sb\n", 3);
-	ft_swap(head, tail);
+	if (lst->b->size > 1)
+	{
+		ft_swap(&lst->b->stk);
+		//if (lst->boll == TRUE)
+			write(1, "sb\n", 3);
+	}
 }
 
-void	ft_ss(t_list *lsta, t_list *lstb)
+void	ft_ss(t_data *lst)
 {
+	lst->boll = FALSE;
+	ft_sa(lst);
+	ft_sb(lst);
+	lst->boll = TRUE;
 	write(1, "ss\n", 3);
-	ft_sa(&lsta->content, &lsta->next->content);
-	ft_sb(&lstb->content, &lstb->next->content);
 }
 
-void	ft_pa(t_list *lsta, t_list *lstb)
+void	ft_pa(t_data *lst)
 {
-	write(1, "pa\n", 3);
-	ft_push(&lstb, &lsta);
+	if (lst->a->size == 0)
+		lst->a->stk = NULL;
+	if (lst->b->size > 0)
+	{
+		lst->b->size -= 1;
+		lst->a->size += 1;
+		ft_push(&lst->b->stk, &lst->a->stk);
+		write(1, "pa\n", 3);
+	}
 }
 
-void	ft_pb(t_list *lsta, t_list *lstb)
+void	ft_pb(t_data *lst)
 {
-	write(1, "pa\n", 3);
-	ft_push(&lsta, &lstb);
+	if (lst->b->size == 0)
+		lst->b->stk = NULL;
+	if (lst->a->size > 0)
+	{
+		lst->a->size -= 1;
+		lst->b->size += 1;
+		ft_push(&lst->a->stk, &lst->b->stk);
+		write(1, "pb\n", 3);
+	}
 }

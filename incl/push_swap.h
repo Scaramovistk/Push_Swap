@@ -6,7 +6,7 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:57:20 by gscarama          #+#    #+#             */
-/*   Updated: 2022/04/07 17:59:00 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/04/22 15:18:28 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,52 @@
 
 # include "../ft_printf/ft_printf.h"
 # include <stdio.h>
+# define FALSE 0
+# define TRUE 1
 
-void	ft_printflst(t_list *lst);
+typedef struct s_stacks
+{
+	t_list	*stk;
+	int		size;
+}	t_stacks;
 
-t_list	*create_list(int argc, char **argv);
-void	ft_swap(int *head, int *tail);
-void	ft_push(t_list **lsta, t_list **lstb);
-void	algoritims(t_list *lst);
+typedef struct s_data
+{
+	t_stacks	*a;
+	t_stacks	*b;
+	int			boll;
+}	t_data;
 
 void	check_args(char **argv);
 void	check_dup(t_list *lst);
 void	ft_error();
 
-void	ft_sa(int *head, int *tail);
-void	ft_sb(int *head, int *tail);
-void	ft_ss(t_list *lsta, t_list *lstb);
-void	ft_pa(t_list *lsta, t_list *lstb);
-void	ft_pb(t_list *lsta, t_list *lstb);
-void	ft_ra(t_list **lsta);
-void	ft_rb(t_list **lstb);
-void	ft_rr(t_list **lsta, t_list **lstb);
-void	ft_rra(t_list **lsta);
-void	ft_rrb(t_list **lstb);
-void	ft_rrr (t_list **lsta, t_list **lstb);
+void	printlst(t_list *lst);
+void	print_all_lst(t_data *lst);
 
-void	quicksort(t_list *lst, int lenght);
+t_list	*create_list(int argc, char **argv);
+int		is_sorted(t_list *lst);
+int		biggest_nbr(t_list *lst);
+int		smallest_nbr(t_list *lst);
+
+int		find_index(t_stacks *lst, int big);
+void	sort_b(t_data *lst, t_stacks *stka, int big);
+void	mini_sort(t_data *lst);
+
+
+
+void	ft_push(t_list **lsta, t_list **lstb);
+void	ft_swap(t_list **lst);
+void	ft_sa(t_data *lst);
+void	ft_sb(t_data *lst);
+void	ft_ss(t_data *lst);
+void	ft_pa(t_data *lst);
+void	ft_pb(t_data *lst);
+void	ft_rr(t_data *lst);
+void	ft_rrr (t_data *lst);
+void	ft_ra(t_data *lsta);
+void	ft_rb(t_data *lstb);
+void	ft_rra(t_data *lsta);
+void	ft_rrb(t_data *lstb);
 
 #endif

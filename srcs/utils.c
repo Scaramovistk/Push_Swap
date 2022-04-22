@@ -6,7 +6,7 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 12:46:06 by gscarama          #+#    #+#             */
-/*   Updated: 2022/04/06 15:25:44 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/04/22 15:20:07 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,24 @@ t_list	*create_list(int argc, char **argv)
 	return (lst);
 }
 
-void	ft_printflst(t_list *lst)
+void	printlst(t_list *lst)
 {
-	while (lst)
+	t_list	*tmp;
+
+	tmp = lst;
+	while (tmp)
 	{
-		printf("Arg: %i\n", lst->content);
-		lst = lst->next;
+		ft_printf("Arg: %i\n", tmp->content);
+		tmp = tmp->next;
 	}
+}
+
+void	print_all_lst(t_data *lst)
+{
+	ft_printf("\n*****Stack A******\n");
+	printlst(lst->a->stk);
+	ft_printf("\n*****Stack B******\n");
+	printlst(lst->b->stk);
 }
 
 void	ft_error()
