@@ -6,7 +6,7 @@
 /*   By: gscarama <gscarama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:57:20 by gscarama          #+#    #+#             */
-/*   Updated: 2022/04/22 15:18:28 by gscarama         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:25:57 by gscarama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_data
 {
 	t_stacks	*a;
 	t_stacks	*b;
+	int			size;
 	int			boll;
 }	t_data;
 
@@ -46,8 +47,6 @@ int		smallest_nbr(t_list *lst);
 int		find_index(t_stacks *lst, int big);
 void	sort_b(t_data *lst, t_stacks *stka, int big);
 void	mini_sort(t_data *lst);
-
-
 
 void	ft_push(t_list **lsta, t_list **lstb);
 void	ft_swap(t_list **lst);
