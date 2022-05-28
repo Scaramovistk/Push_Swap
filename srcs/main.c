@@ -131,7 +131,6 @@ int	main(int argc, char **argv)
 	lst->b->stk = NULL;
 	lst->a->size = argc - 1;
 	lst->size = argc - 1;
-	//lst->boll = malloc(sizeof(int));
 	lst->boll = TRUE;
 
 //Checks
@@ -158,6 +157,6 @@ int	main(int argc, char **argv)
 	// ft_rr(lst);
 	// ft_ss(lst);
 	printlst(lst->a->stk);
-	//FREE data
+	//FREE all data
 	return (0);
 }
